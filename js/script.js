@@ -8,6 +8,8 @@ const controls = [controlMissao, controlVisao, controlValores]
 const sections = document.querySelectorAll("main section")
 const navLinks = document.querySelectorAll("header nav ul li a")
 const eHeader = document.querySelector("header")
+const servicesCards = document.querySelectorAll(".servicos-container-cards-card")
+const servicesItems = document.querySelectorAll(".servicos-container-items-item")
 
 // ================ scroll sections active =========================
 
@@ -18,7 +20,7 @@ window.onscroll = () => {
         let height = sec.offsetHeight
         let id = sec.getAttribute('id');
         console.log('top: ', top, 'offset: ', offset, 'height: ', height, 'id: ', id)
-        if (top > 10 && top < 300) {
+        if (top > 10) {
             eHeader.classList.add('sticky')
         } else if (top < 10) {
             eHeader.classList.remove('sticky')
@@ -47,10 +49,29 @@ function selectMVV(ItemIndex) {
 
     items[ItemIndex].scrollIntoView({
         behavior: "smooth",
-        inline: "center"
+        inline: "center",
+        block: "nearest"
     })
 }
 
 controlMissao.addEventListener('click', () => selectMVV(0))
 controlVisao.addEventListener('click', () => selectMVV(1))
 controlValores.addEventListener('click', () => selectMVV(2))
+
+
+// ======================== services =================================
+
+
+servicesCards.forEach(card => {
+    card.addEventListener('mouseenter', (e) => {
+        let cardIndex = Array.from(servicesCards).indexOf(e.target)
+
+        servicesCards.forEach((eCard) => eCard.classList.remove('active'))
+        servicesCards[cardIndex].classList.add('active')
+
+        servicesItems.forEach((eService) => eService.classList.remove('active'))
+        servicesItems[cardIndex].classList.add('active')
+
+
+    }); // Passando apenas a referência da função
+})
