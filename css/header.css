@@ -45,7 +45,7 @@
     color: var(--color-white);
 }
 
-.contact {
+.contact-nav {
     padding: 10px 2rem;
     border-radius: 100px;
     border: 1px solid var(--color-white);
@@ -85,12 +85,12 @@
     transition: .3s;
 }
 
-.contact:hover,
-.contact.sticky {
+.contact-nav:hover,
+.contact-nav.sticky {
     border: 1px solid var(--color-main);
 }
 
-.contact:hover>.contact-link,
-.contact.sticky>.contact-link {
+.contact-nav:hover>.contact-link,
+.contact-nav.sticky>.contact-link {
     color: var(--color-main);
 }
