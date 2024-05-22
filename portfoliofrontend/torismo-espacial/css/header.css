@@ -1,0 +1,120 @@
+.navbar {
+    width: 100vw;
+    display: flex;
+    padding: 4rem 0 0 3rem;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+}
+
+.navbar-logo {
+    margin-right: 3rem;
+}
+
+.navbar-line {
+    width: 80%;
+    opacity: 25%;
+    transform: translate(2vw);
+    z-index: 2;
+}
+
+.navbar>img {
+    display: none;
+}
+
+.navbar-links {
+    display: flex;
+}
+
+.navbar-links {
+    width: 55vw;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, .04);
+    backdrop-filter: blur(8.1px);
+    gap: 2rem;
+}
+
+.navbar-links-link {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    position: relative;
+}
+
+.navbar-links-link::before {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-font-main);
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+}
+
+.navbar-links-link span {
+    font-weight: 700;
+    margin-right: .5rem;
+}
+
+.navbar-links-link:hover::before {
+    opacity: .25;
+
+}
+
+.navbar-links-link.active::before {
+    opacity: 1;
+    animation: navButtonAtivo 300ms ease-in-out forwards;
+}
+
+@keyframes navButtonAtivo {
+    0% {
+        width: 0;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    .navbar {
+        padding: 0 0 0 3rem;
+    }
+
+
+    .navbar-line {
+        opacity: 0;
+    }
+
+
+
+    .navbar-links {
+        height: 7.5rem;
+    }
+
+
+
+    .navbar-links-link span {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 700px) {
+
+    .navbar {
+        padding: 2rem 3rem;
+    }
+
+    .navbar>img {
+        display: block;
+        height: 100%;
+    }
+
+    .navbar-links {
+        display: none;
+    }
+}

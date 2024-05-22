@@ -1,0 +1,96 @@
+.tecnologia {
+    background-image: url("../assets/technology/background-technology-desktop.jpg");
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-end; */
+    justify-content: center;
+    padding: 0 0 0 10vw;
+}
+
+.tecnologia-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* height: 50vh; */
+}
+
+.tecnologia-container-content {
+    display: flex;
+    align-items: center;
+}
+
+.tecnologia-container-content-buttons {
+    margin-right: 2rem;
+
+}
+
+.tecnologia-container-content-buttons button {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    border: 1px solid var(--color-font-main);
+    border-color: rgba(255, 255, 255, .25);
+    margin: 1rem 0;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.tecnologia-container-content-buttons button:hover {
+    border-color: var(--color-font-main);
+}
+
+.tecnologia-container-content-buttons button.active {
+    background-color: var(--color-font-main);
+}
+
+
+.tecnologia-container-content-buttons button.active>h5 {
+    color: var(--color-backgroud-dark);
+}
+
+.tecnologia-container-content-texts>.subheading2 {
+    font-size: 1rem;
+}
+
+.tecnologia-container-content-texts h4 {
+    margin: .8rem 0 1rem 0;
+    transition: all 300ms ease-in-out;
+}
+
+.tecnologia-container-content-texts>.body-text {
+    width: 30vw;
+    transition: all 300ms ease-in-out;
+}
+
+.tecnologia-container-imgs-portrait {
+    display: block;
+}
+
+.tecnologia-container-imgs-landscape {
+    display: none;
+}
+
+.tecnologia-container-imgs div>img {
+    display: none;
+    transition: all 600ms ease-in-out;
+}
+
+.tecnologia-container-imgs div>img.active {
+    display: block;
+}
+
+.tecnologia-container-imgs div>img.animation {
+    animation: animationImgTecnology 600ms ease-in-out forwards;
+
+}
+
+@keyframes animationImgTecnology {
+    0% {
+        opacity: 0;
+        transform: translate(10%);
+    }
+}

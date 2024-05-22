@@ -1,0 +1,290 @@
+.destino {
+    background-image: url('../assets/destination/background-destination-desktop.jpg');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5vh 10vw;
+}
+
+.destino h6 {
+    align-self: flex-start;
+    margin-bottom: 5vh;
+}
+
+.destino h6>span {
+    opacity: .25;
+    font-weight: 700;
+    margin-right: 2rem;
+}
+
+.destino-container {
+    display: flex;
+    flex-wrap: row wrap;
+    gap: 10vw;
+}
+
+
+.destino-corousel-img-wrapper {
+    overflow-x: auto;
+    /* border-radius: 50%; */
+    /* border: 1px solid red; */
+}
+
+.destino-corousel-img-wrapper-items {
+    display: flex;
+    flex-wrap: row nowrap;
+    gap: 10px;
+    width: 30vw;
+}
+
+.destino-corousel-img-wrapper-items img {
+    /* width: 28vw; */
+    height: 30vw;
+
+}
+
+.destino-corousel-img-wrapper-items img.animationleft {
+    animation: rotateIMGleft 1200ms ease-out forwards;
+}
+
+.destino-corousel-img-wrapper-items img.animationright {
+    animation: rotateIMGright 1200ms ease-out forwards;
+}
+
+@keyframes rotateIMGleft {
+    100% {
+        rotate: -360deg;
+    }
+}
+
+@keyframes rotateIMGright {
+    100% {
+        rotate: 360deg;
+    }
+}
+
+.destino-corousel-img-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.destino-corousel-img-wrapper {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+/* destino content  */
+.destino-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    height: 40vh;
+}
+
+.destino-content h3 {
+    margin-top: 2rem;
+}
+
+/* destino buttons  */
+
+.destino-content-buttons-container {
+    display: flex;
+    gap: 2rem;
+}
+
+/* destino buttons padrao  */
+
+.destino-content-buttons-container>li {
+    color: var(--color-font-second);
+    position: relative;
+    cursor: pointer;
+}
+
+/* destino buttons before  */
+.destino-content-buttons-container>li::before {
+    content: '';
+    height: 2px;
+    width: 100%;
+    /* left: 50%;
+    transform: translate(-50%); */
+    position: absolute;
+    bottom: -1rem;
+    background-color: var(--color-font-main);
+    opacity: 0;
+}
+
+/* destino buttons active  */
+.destino-content-buttons-container>li.active {
+    color: var(--color-font-main);
+    transition: all 400ms ease-out;
+}
+
+.destino-content-buttons-container>li.active::before {
+    color: var(--color-font-main);
+    opacity: 1;
+    animation: animationNavDestinoActive 400ms cubic-bezier(.46, .26, .65, 1.5) forwards;
+}
+
+/* destino buttons hover  */
+.destino-content-buttons-container>li:not(.active):hover::before {
+    opacity: .25;
+    animation: animationNavDestinoHover 100ms ease-out forwards;
+}
+
+@keyframes animationNavDestinoHover {
+    0% {
+        width: 0%;
+    }
+}
+
+@keyframes animationNavDestinoActive {
+    0% {
+        left: 50%;
+        transform: translate(-50%);
+        width: 0%;
+    }
+
+    100% {
+        left: 50%;
+        transform: translate(-50%);
+        width: 100%;
+    }
+}
+
+.destino-content h3,
+.destino-content>p,
+.destino-content-stats span {
+    transition: all 300ms ease-in-out;
+}
+
+
+
+.destino-content>p {
+    max-width: 500px;
+    margin: 0;
+    /* transition: all 300ms ease-in-out; */
+}
+
+.destino-content hr {
+    width: 100%;
+    opacity: .25;
+    margin: 2vh 0 1vh 0;
+}
+
+.destino-content p {
+    color: var(--color-font-second);
+}
+
+
+.destino-content-stats {
+    display: flex;
+    gap: 2rem;
+}
+
+.destino-content-stats p {
+    margin-bottom: 1rem;
+}
+
+.destino-content-stats span {
+    color: var(--color-font-main);
+    /* transition: all 300ms ease-in-out; */
+}
+
+
+@media screen and (max-width: 800px) {
+    .destino {
+        justify-content: start;
+        padding: 13vh 3rem;
+    }
+
+    .destino h6 {
+        /* margin: 10vh 0 5vh 3vw; */
+
+    }
+
+    .destino-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0;
+    }
+
+    .destino-content {
+        align-items: center;
+        justify-content: start;
+        margin-top: 2rem;
+    }
+
+    .destino-content>p {
+        text-align: center;
+        min-width: 80vw;
+    }
+
+    .destino-content-stats {
+        display: flex;
+        width: 80vw;
+        justify-content: space-evenly;
+    }
+
+    .destino-content-stats div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+}
+
+@media screen and (max-width: 485px) {
+
+    .destino {
+        background-image: url('../assets/destination/background-destination-mobile.jpg');
+    }
+
+
+    .destino h6 {
+        align-self: center;
+    }
+
+    .destino-corousel-img-wrapper-items {
+        width: 40vw;
+    }
+
+    .destino-corousel-img-wrapper-items img {
+        height: 40vw;
+    }
+
+
+    .destino-content-stats {
+        flex-direction: column;
+    }
+
+    .destino-content-stats div {
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (max-width: 375px) {
+
+    .destino-corousel-img-wrapper-items {
+        width: 45vw;
+    }
+
+    .destino-corousel-img-wrapper-items img {
+        height: 45vw;
+    }
+
+    .destino-content h3 {
+        margin: 3rem 0;
+    }
+
+    .destino-content-buttons-container {
+        gap: 7.5vw;
+    }
+
+    .destino-content hr {
+        margin: 4vh 0 2vh 0;
+    }
+}
